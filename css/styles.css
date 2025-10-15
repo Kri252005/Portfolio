@@ -28,13 +28,13 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
 }
 
-/* === Contact Form === */
+/* Contact Form */
 .contact-form {
   flex: 1;
   background: var(--card);
@@ -82,21 +82,18 @@ a:hover {
   box-shadow: 0 0 25px var(--shadow);
 }
 
-/* === Contact Info === */
+/* Contact Info */
 .contact-info {
   flex: 1;
-  color: var(--text);
 }
-
 .contact-info h3 {
   color: var(--accent);
   margin-bottom: 15px;
 }
-
 .contact-info p,
 .contact-info a {
-  margin-bottom: 10px;
   font-size: 1em;
+  margin-bottom: 10px;
   color: var(--text);
 }
 .contact-info a {
@@ -107,7 +104,7 @@ a:hover {
   color: var(--accent);
 }
 
-/* === Footer === */
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -116,7 +113,7 @@ footer {
   color: var(--text);
 }
 
-/* === Responsive === */
+/* Responsive */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
