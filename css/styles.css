@@ -1,108 +1,55 @@
-/* --- 1. Basic Reset and Variables for Dark Theme --- */
+/* Optimized CSS for R KRITHI MALLIKA Portfolio */
+
+/* --- 1. Variables and Base Reset --- */
 :root {
-    --primary-color: #7B24FF; /* Vibrant Purple */
-    --accent-color: #00DDEB;  /* Cyan/Blue for highlights */
-    --bg-dark: #1A0436;      /* Very dark purple background */
-    --bg-darker: #29064D;    /* Slightly lighter dark background for sections */
-    --card-bg: #3A005F;      /* Dark purple for cards */
-    --text-light: #E0E0E0;   /* Light grey for most text */
-    --text-lighter: #FFFFFF; /* White for headings and highlights */
-    --border-color: rgba(123, 36, 255, 0.3); /* Semi-transparent primary for borders */
-    --shadow-light: rgba(123, 36, 255, 0.4); /* Glow effect for shadows */
-    --shadow-dark: rgba(0, 0, 0, 0.5); /* Standard dark shadow */
-    --font-stack: 'Poppins', sans-serif;
+    --primary-purple: #5d3fd3; /* Bright Purple */
+    --background-dark: #0f001f; /* Very dark background */
+    --accent-cyan: #4ff3ff; /* Cyan/Light Blue for highlights */
+    --button-bg: #8a2be2; /* Blue Violet for button */
+    --section-bg: rgba(30, 0, 60, 0.5); /* Semi-transparent card background */
+    --text-light: #ffffff;
+    --text-muted: #cccccc;
+    --border-subtle: rgba(70, 0, 140, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: var(--font-stack);
-    line-height: 1.6;
+    background-color: var(--background-dark);
     color: var(--text-light);
-    background: var(--bg-dark);
-    scroll-behavior: smooth;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
+    line-height: 1.6;
 }
 
 a {
+    color: var(--accent-cyan);
     text-decoration: none;
-    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--text-lighter);
+    color: var(--primary-purple);
 }
 
-ul {
-    list-style: none;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-lighter);
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-p {
-    margin-bottom: 15px;
-}
-
-/* --- 2. Utility Classes --- */
 .section-padding {
     padding: 80px 0;
 }
 
-.bg-darker {
-    background: var(--bg-darker);
-}
-
-.highlight-text {
-    color: var(--accent-color);
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--primary-color);
-    color: var(--text-lighter);
-    padding: 12px 25px;
-    border-radius: 8px;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1.05em;
-    font-weight: 600;
-    box-shadow: 0 0 15px var(--shadow-light); /* Initial glow */
-}
-
-.cta-button:hover {
-    background: #9D5BFF; /* Lighter purple on hover */
-    box-shadow: 0 0 25px var(--shadow-light); /* Stronger glow */
-}
-
-.text-center {
-    text-align: center;
-}
-
-/* --- 3. Header and Navigation --- */
+/* --- 2. Header and Navigation --- */
 header {
-    background: var(--bg-dark);
+    background: rgba(15, 0, 31, 0.9); /* Slightly more opaque */
     padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px var(--shadow-dark);
+    border-bottom: 2px solid var(--primary-purple); 
 }
 
 header .container {
@@ -111,103 +58,109 @@ header .container {
     align-items: center;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 .logo a {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--accent-color);
-    text-shadow: 0 0 8px rgba(0, 221, 235, 0.6);
+    color: var(--text-light);
 }
 
 #main-nav ul {
+    list-style: none;
     display: flex;
 }
 
-#main-nav li a {
-    padding: 0 20px;
-    font-weight: 600;
+#main-nav ul li a {
+    padding: 10px 15px;
+    display: block;
     color: var(--text-light);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-#main-nav li a:hover,
-#main-nav li a.active {
-    color: var(--accent-color);
-    text-shadow: 0 0 5px rgba(0, 221, 235, 0.4);
+#main-nav ul li a.active,
+#main-nav ul li a:hover {
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
 }
 
 .menu-toggle {
-    display: none; /* Hidden on desktop */
+    display: none; 
     background: none;
     border: none;
-    color: var(--text-lighter);
-    font-size: 2em;
+    color: var(--text-light);
+    font-size: 1.5rem;
     cursor: pointer;
-    line-height: 1;
 }
 
-/* --- 4. Hero Section --- */
-.hero-section {
-    position: relative;
-    padding: 100px 0;
-    text-align: left;
-    overflow: hidden; /* For glow effects */
+/* --- 3. CTA Button (Used on Home & Contact) --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--button-bg);
+    color: var(--text-light);
+    border: 2px solid var(--button-bg); 
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.hero-section .container {
+.cta-button:hover {
+    background-color: transparent;
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* --- 4. Home/Hero Section --- */
+#hero {
+    min-height: 70vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    position: relative;
-    z-index: 1;
+    background: linear-gradient(135deg, var(--background-dark) 60%, rgba(50, 0, 100, 0.1)); 
+}
+
+.hero-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
 }
 
 .hero-content {
-    flex: 2;
-    max-width: 700px;
+    max-width: 50%;
 }
 
-.hero-content .greeting {
-    color: var(--accent-color);
-    font-size: 1.1em;
+.greeting {
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
     margin-bottom: 10px;
 }
 
-.hero-content h2 {
-    font-size: 3.5em;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-content .description {
-    font-size: 1.1em;
-    line-height: 1.8;
+.highlight {
     color: var(--text-light);
-    max-width: 500px;
-    margin-bottom: 30px;
+    font-weight: bold;
 }
 
+.description {
+    font-size: 1.1rem;
+    margin: 15px 0 30px 0;
+}
+
+/* Profile Image with Glow */
 .hero-image-placeholder {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    padding: 20px; /* Space for glow */
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
 }
 
 .profile-avatar {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 0 30px var(--shadow-light); /* Avatar glow */
+    border-radius: 50%;
     position: relative;
     z-index: 2;
+    border: 3px solid var(--primary-purple);
 }
 
 .glow-effect {
@@ -215,353 +168,202 @@ header .container {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--accent-color) 0%, transparent 60%);
-    filter: blur(40px);
-    opacity: 0.4;
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(circle, var(--primary-purple) 0%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: 0.8;
     z-index: 1;
-    animation: pulseGlow 4s infinite alternate;
 }
 
-@keyframes pulseGlow {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
-    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
-}
-
-
-/* --- 5. Work Experience Section --- */
-#work-experience {
+/* --- 5. Content Card (Used for Bio-data, Resume, Contact, Projects) --- */
+h2 {
+    font-size: 2rem;
+    color: var(--primary-purple);
     text-align: center;
+    margin-bottom: 30px;
 }
 
-#work-experience h2 {
-    margin-bottom: 40px;
-    font-size: 2.5em;
-    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.card-section, .content-card { /* Merged selectors */
+    max-width: 900px;
+    padding: 40px;
+    background-color: var(--section-bg);
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-.experience-grid {
+/* --- 6. Bio-data & Skills Styling --- */
+.data-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.experience-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 30px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Base shadow */
+.data-point {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--accent-cyan);
+    border-radius: 3px;
 }
 
-.experience-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-    transform: scale(0);
+.skills-box h3, .resume-item h3 { /* Merged h3 styling for consistency */
+    color: var(--accent-cyan);
+    margin: 25px 0 15px 0;
+    border-bottom: 1px solid var(--primary-purple);
+    padding-bottom: 5px;
 }
 
-
-.experience-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px var(--shadow-light); /* Stronger glow on hover */
-}
-.experience-card:hover::before {
-    opacity: 0.1;
-    transform: scale(1);
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-
-.experience-card h3 {
-    color: var(--text-lighter);
-    font-size: 1.6em;
-    margin-bottom: 5px;
+.skill-tag {
+    background-color: var(--primary-purple);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
-.experience-card .role {
-    color: var(--accent-color);
-    font-weight: 600;
-    margin-bottom: 5px;
+/* --- 7. Resume Styling --- */
+.resume-item {
+    margin-bottom: 30px;
 }
 
-.experience-card .duration {
-    color: var(--text-light);
-    font-size: 0.9em;
+.resume-item h3 {
+    border-bottom: 2px solid var(--primary-purple); /* Specific border thickness */
     margin-bottom: 15px;
 }
 
-.experience-card ul {
-    list-style: disc;
-    margin-left: 20px;
+.resume-item h4 {
     color: var(--text-light);
-    font-size: 0.95em;
-}
-
-.experience-card ul li {
-    margin-bottom: 8px;
-}
-
-/* --- 6. Projects Section (Featured and All Projects) --- */
-#featured-projects, #all-projects {
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, var(--accent-color), var(--primary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.section-subtitle {
-    font-size: 1.1em;
-    color: var(--text-light);
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px var(--shadow-light);
-}
-
-.project-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.project-card h3 {
-    padding: 15px;
-    font-size: 1.5em;
+    font-size: 1.1rem;
     margin-bottom: 5px;
-    color: var(--text-lighter);
 }
 
-.project-card p {
-    padding: 0 15px;
-    font-size: 0.95em;
-    color: var(--text-light);
-    line-height: 1.7;
-    min-height: 70px; /* Ensure consistent card height */
+.timeline {
+    font-style: italic;
+    color: #ccc;
+    font-size: 0.9rem;
 }
 
-.tech-stack {
-    margin: 15px 15px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-.tech-stack span {
-    display: inline-block;
-    background: rgba(123, 36, 255, 0.2); /* Lighter primary color with transparency */
-    color: var(--accent-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8em;
-    font-weight: 500;
+.resume-item ul {
+    list-style: disc;
+    margin: 10px 0 0 20px;
+    color: #eee;
 }
 
-.project-links {
-    padding: 15px;
-    display: flex;
-    gap: 15px;
-    border-top: 1px solid var(--border-color);
-    margin-top: auto; /* Push links to bottom of card */
-}
-
-.project-links a {
-    font-weight: 600;
-    font-size: 0.95em;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.project-links a::before { /* Add subtle icons */
-    content: '🔗'; /* Link icon */
-    font-size: 0.9em;
-}
-.project-links a:nth-child(2)::before {
-    content: '🐙'; /* GitHub Octocat icon */
-}
-
-
-/* --- 7. Contact Form (retaining previous structure, styling for new theme) --- */
-#contact-form {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 0 20px var(--shadow-dark);
-    border: 1px solid var(--border-color);
+/* --- 8. Contact Form Styling --- */
+.intro-text {
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: var(--text-muted); /* Using variable */
 }
 
-#contact-form input[type="text"],
-#contact-form input[type="email"],
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+#contact-form input, /* Combined input and textarea selectors */
 #contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.3); /* Slightly transparent dark input */
-    color: var(--text-lighter);
-    font-family: var(--font-stack);
-    font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#contact-form input::placeholder,
-#contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary-purple);
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1rem;
 }
 
 #contact-form input:focus,
 #contact-form textarea:focus {
+    border-color: var(--accent-cyan);
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+    box-shadow: 0 0 5px var(--accent-cyan);
 }
 
-#form-message {
-    margin-top: 20px;
-    font-weight: 600;
+#contact-form textarea {
+    resize: vertical;
 }
 
-/* --- 8. Footer --- */
-footer {
-    background: var(--bg-dark);
-    color: var(--text-light);
+#contact-form .cta-button {
+    width: 100%;
+    text-transform: none; /* Removed uppercase for form button */
+}
+
+.contact-info {
     text-align: center;
-    padding: 30px 0;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9em;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(93, 63, 211, 0.3);
 }
 
+.contact-info h3 {
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+}
+
+/* Form Message Feedback */
+#form-message.success {
+    color: #38c172;
+    font-weight: bold;
+}
+
+#form-message.error {
+    color: #e3342f;
+    font-weight: bold;
+}
+
+/* --- 9. Footer --- */
+footer {
+    background-color: var(--background-dark);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--border-subtle);
+    margin-top: 30px;
+}
 footer a {
-    color: var(--primary-color);
-    font-weight: 600;
-    text-decoration: underline;
-}
-footer a:hover {
-    color: var(--accent-color);
+    color: var(--primary-purple);
 }
 
-/* --- 9. Media Query for Mobile Responsiveness --- */
+/* --- 10. Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    header .container {
-        flex-wrap: wrap; /* Allow logo and toggle to wrap */
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
     }
-
-    .logo {
-        flex-grow: 1; /* Allow logo to take space */
+    
+    .hero-image-placeholder {
+        margin-top: 30px;
+        order: -1; 
     }
 
     #main-nav {
-        display: none; /* Hidden by default */
+        display: none; 
         width: 100%;
-        background: var(--bg-darker);
-        border-top: 1px solid var(--border-color);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(15, 0, 31, 0.95);
+        z-index: 999;
     }
     
-    #main-nav.active {
-        display: block; /* Show when active */
-    }
-
     #main-nav ul {
         flex-direction: column;
-        padding: 15px 0;
+        text-align: center;
+        padding: 10px 0;
     }
 
-    #main-nav li a {
-        display: block;
-        padding: 10px 20px;
-        text-align: center;
-        color: var(--text-lighter);
-    }
-    
     .menu-toggle {
         display: block;
-        margin-left: auto; /* Push toggle to right */
-    }
-
-    .hero-section .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-content h2 {
-        font-size: 2.5em;
-    }
-
-    .hero-image-placeholder {
-        order: -1; /* Move image above text on mobile */
-        margin-bottom: 30px;
-    }
-
-    .profile-avatar {
-        width: 180px;
-        height: 180px;
-    }
-    .glow-effect {
-        width: 220px;
-        height: 220px;
-        filter: blur(30px);
-    }
-
-    .experience-grid, .projects-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
-
-    .section-title {
-        font-size: 2em;
-    }
-    .section-subtitle {
-        font-size: 1em;
-    }
-    
-    .project-card p {
-        min-height: auto; /* Allow project descriptions to vary height */
     }
 }

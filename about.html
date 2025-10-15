@@ -3,65 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R KRITHI MALLIKA - About & Skills</title>
+    <title>About & Bio-data</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="container">
-            <h1 class="logo"><a href="index.html"></a></h1>
+            <h1 class="logo"><a href="index.html">R.K.M.</a></h1>
             <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About & Skills</a></li> 
+                    <li><a href="about.html" class="active">About & Bio-data</a></li>
+                    <li><a href="resume.html">Resume</a></li>
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
     </header>
 
     <main>
-        <section id="about" class="section-padding bg-darker">
+        <section id="about" class="section-padding">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <p>
-                       I am a 3rd-year CS student at AJIET and a Core Member of IEEE CS, currently focused on AI/ML project development while exploring Web and Cloud technologies.
-
-<br>
-                    <a href="resume.pdf" class="cta-button" download>Download Resume (PDF)</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section-padding">
-            <div class="container">
-                <h2 class="section-title">Technical Skills & Foundation</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">C</div>
-                    <div class="skill-item">HTML & CSS</div>
-                    <div class="skill-item">JavaScript</div>
+                <h2>About Me & Bio-data</h2>
+                
+                <div class="bio-data-content">
+                    <p>I am R Krithi Mallika, a motivated 3rd-year Computer Science student at AJIET with a strong foundation in programming and a deep interest in **Artificial Intelligence and Cloud Development**. As an IEEE CS Core Member, I actively participate in technical events and collaborative projects, honing my skills in problem-solving and cutting-edge technologies.</p>
                     
+                    <div class="data-points">
+                        <h3>Bio-data Highlights</h3>
+                        <ul>
+                            <li><strong>Full Name:</strong> R Krithi Mallika</li>
+                            <li><strong>Date of Birth:</strong> 25-07-2005</li>
+                            <li><strong>Nationality:</strong> Indian</li>
+                            <li><strong>Current Role:</strong> 3rd-Year CS Student (AJIET)</li>
+                            <li><strong>Technical Interest:</strong> Web & Cloud Computing</li>
+                            <li><strong>Affiliation:</strong> IEEE CS Core Member</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Key Skills</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">HTML & CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
+    
     <footer>
         <div class="container">
             <p>&copy; <span id="current-year"></span> R KRITHI MALLIKA. | CSE, AJIET. | 
-                <a href="https://www.linkedin.com/in/krithi-mallika-90294a299" target="_blank">LinkedIn</a> | 
-                <a href="https://github.com/Kri252005/" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a> | 
+                <a href="#" target="_blank">GitHub</a>
             </p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
