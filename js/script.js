@@ -1,28 +1,26 @@
 $(document).ready(function() {
     
-    // 1. Footer Year Update (Ensure <span id="current-year"> is in footer)
+    // 1. Footer Year Update
     $('#current-year').text(new Date().getFullYear());
-// ... in js/script.js document.ready function ...
 
-// 2. jQuery for Mobile Navigation Toggle (Hamburger Menu)
-const $mainNavUl = $('#main-nav ul');
+    // 2. jQuery for Mobile Navigation Toggle (Hamburger Menu)
+    const $mainNavUl = $('#main-nav ul');
 
-$('#menu-toggle').on('click', function() {
-    // This simple line triggers the smooth animation based on the CSS "display: none !important" state.
-    $mainNavUl.stop().slideToggle(300);
-});
-// ... rest of the JS ...
-
-    // 3. Close menu when a navigation link is clicked (optional but good practice)
-    $('#main-nav a').on('click', function() {
-        // Only collapse if the menu is visible (i.e., 'nav-open' class is present)
-        if ($header.hasClass('nav-open')) {
-            $header.removeClass('nav-open');
-            $mainNavUl.slideUp(300); // Collapse the menu list smoothly
-        }
+    $('#menu-toggle').on('click', function() {
+        // Toggles the visibility of the menu list with a smooth 300ms animation.
+        // This relies on the CSS rule: #main-nav > ul { display: none !important; }
+        $mainNavUl.stop().slideToggle(300);
     });
 
-    // 4. jQuery AJAX for Formspree Submission (No changes needed here, keeping it functional)
+    // 3. Close menu when a navigation link is clicked (CLEANED UP)
+    // We only need to slide the menu up, as slideToggle handles the visibility flag.
+    $('#main-nav a').on('click', function() {
+        // Use slideUp to smoothly hide the menu list after a link is selected.
+        // This runs whether the menu is visible or not, ensuring it collapses.
+        $mainNavUl.slideUp(300); 
+    });
+
+    // 4. jQuery AJAX for Formspree Submission
     var form = $('#contact-form');
     var formMessage = $('#form-message');
 
