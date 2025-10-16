@@ -2,22 +2,27 @@ $(document).ready(function() {
     
     // 1. Footer Year Update (Ensure <span id="current-year"> is in footer)
     $('#current-year').text(new Date().getFullYear());
+// ... in js/script.js document.ready function ...
 
-    // 2. jQuery for Mobile Navigation Toggle (Hamburger Menu)
-    const $mainNavUl = $('#main-nav ul');
+// 2. jQuery for Mobile Navigation Toggle (Hamburger Menu)
+const $mainNavUl = $('#main-nav ul');
 
-    $('#menu-toggle').on('click', function() {
-        // Toggles the visibility of the menu list with a smooth 300ms animation.
-        $mainNavUl.stop().slideToggle(300);
-    });
+$('#menu-toggle').on('click', function() {
+    // This simple line triggers the smooth animation based on the CSS "display: none !important" state.
+    $mainNavUl.stop().slideToggle(300);
+});
+// ... rest of the JS ...
 
-    // 3. Close menu when a navigation link is clicked
+    // 3. Close menu when a navigation link is clicked (optional but good practice)
     $('#main-nav a').on('click', function() {
-        // Use slideUp to smoothly hide the menu list after a link is selected.
-        $mainNavUl.slideUp(300); 
+        // Only collapse if the menu is visible (i.e., 'nav-open' class is present)
+        if ($header.hasClass('nav-open')) {
+            $header.removeClass('nav-open');
+            $mainNavUl.slideUp(300); // Collapse the menu list smoothly
+        }
     });
 
-    // 4. jQuery AJAX for Formspree Submission
+    // 4. jQuery AJAX for Formspree Submission (No changes needed here, keeping it functional)
     var form = $('#contact-form');
     var formMessage = $('#form-message');
 
