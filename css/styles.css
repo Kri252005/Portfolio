@@ -85,8 +85,13 @@ footer a{color:var(--primary-purple)}
         z-index:998;
         overflow:hidden
     }
-    /* FIX: Hides the menu list by default for jQuery slideToggle() animation */
-    #main-nav ul{display:none;flex-direction:column;text-align:center;padding:10px 0} 
+    /* FIX: HIGH SPECIFICITY RULE to guarantee the menu is hidden for jQuery to animate */
+    #main-nav > ul {
+        display: none !important; 
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
     
     #main-nav ul li a{padding:15px 0;border-bottom:1px solid var(--border-subtle)}
     #main-nav ul li:last-child a{border-bottom:none}

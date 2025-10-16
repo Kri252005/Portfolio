@@ -2,21 +2,16 @@ $(document).ready(function() {
     
     // 1. Footer Year Update (Ensure <span id="current-year"> is in footer)
     $('#current-year').text(new Date().getFullYear());
+// ... in js/script.js document.ready function ...
 
-    // 2. jQuery for Mobile Navigation Toggle (Hamburger Menu)
-    const $header = $('header');
-    const $mainNavUl = $('#main-nav ul');
+// 2. jQuery for Mobile Navigation Toggle (Hamburger Menu)
+const $mainNavUl = $('#main-nav ul');
 
-    $('#menu-toggle').on('click', function() {
-        
-        // A. Toggle the 'nav-open' class on the header immediately. 
-        // This is crucial for the CSS to change the menu's *state*.
-        $header.toggleClass('nav-open');
-        
-        // B. Use jQuery slideToggle on the UL for the animated effect.
-        // We target the <ul> inside the <nav id="main-nav">
-        $mainNavUl.stop().slideToggle(300); 
-    });
+$('#menu-toggle').on('click', function() {
+    // This simple line triggers the smooth animation based on the CSS "display: none !important" state.
+    $mainNavUl.stop().slideToggle(300);
+});
+// ... rest of the JS ...
 
     // 3. Close menu when a navigation link is clicked (optional but good practice)
     $('#main-nav a').on('click', function() {
