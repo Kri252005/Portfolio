@@ -78,7 +78,8 @@ header {
     border-bottom: 2px solid var(--primary-purple);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    /* CRITICAL FIX: High Z-index to avoid touch blocking issues on mobile */
+    z-index: 10000; 
 }
 
 header .container {
@@ -120,6 +121,8 @@ header .container {
     color: var(--text-light);
     font-size: 2rem;
     cursor: pointer;
+    /* CRITICAL FIX: Ensure button is above everything else */
+    z-index: 10001;
 }
 
 /* ------------------------------------------------------------------------ */
