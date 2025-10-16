@@ -5,35 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R KRITHI MALLIKA - Projects</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1 class="logo"><a href="index.html"></a></h1>
+            <div class="logo">R.K.M.</div>
+            
             <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About & Skills</a></li>
+                    <li><a href="bio-data.html">Bio-data</a></li> 
+                    <li><a href="resume.html">Resume</a></li>
                     <li><a href="project.html" class="active">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
     </header>
 
     <main>
-        <section id="all-projects" class="section-padding bg-darker">
+        <section id="all-projects" class="section-padding">
             <div class="container">
-                <h2 class="section-title">My Technical Portfolio</h2>
-
-                
-                <div class="projects-grid">
+                <h2>My Technical Portfolio</h2> <div class="projects-grid">
                     
-                    <article class="project-card">
-                        
-                        <h3>Potato Plant Disease Prediction</h3>
+                    <article class="project-card content-card"> <h3>Potato Plant Disease Prediction</h3>
                         <p>A computer vision model using the MobileNetV2 architecture to classify and predict common potato plant diseases with high accuracy. Built for real-world agricultural application.</p>
                         <div class="tech-stack">
                             <span>#Python</span>
@@ -41,37 +39,40 @@
                             <span>#TensorFlow/Keras</span>
                             <span>#OpenCV</span>
                         </div>
-                    
+                        <div class="project-links">
+                            <a href="#" class="cta-button small-button" target="_blank">View Code (GitHub)</a>
+                            </div>
                     </article>
- <article class="project-card">
+
+                    <article class="project-card content-card">
                         
                         <h3>Hospital Management System (HMS)</h3>
-<p>A comprehensive, cloud-based web application designed to streamline patient care, appointment scheduling, and administrative workflows for small to medium-sized hospitals. Features secure EHR, billing, and reporting modules.</p>
-<div class="tech-stack">
-    <span>#Node.js/Express</span>
-    <span>#MongoDB</span>
-    <span>#React/HTML/CSS</span>
-    <span>#RESTful API</span>
-</div>
-                   
-                    
+                        <p>A comprehensive, cloud-based web application designed to streamline patient care, appointment scheduling, and administrative workflows for small to medium-sized hospitals. Features secure EHR, billing, and reporting modules.</p>
+                        <div class="tech-stack">
+                            <span>#Node.js/Express</span>
+                            <span>#MongoDB</span>
+                            <span>#React/HTML/CSS</span>
+                            <span>#RESTful API</span>
+                        </div>
+                        <div class="project-links">
+                             <a href="#" class="cta-button small-button" target="_blank">View Code (GitHub)</a>
+                        </div>
+                    </article>
 
-                </div>
+                    </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year"></span> R KRITHI MALLIKA. | 
+            <p>&copy; <span id="current-year">2024</span> R KRITHI MALLIKA. | 
                 <a href="https://www.linkedin.com/in/krithi-mallika-90294a299" target="_blank">LinkedIn</a> | 
                 <a href="https://github.com/Kri252005/" target="_blank">GitHub</a>
             </p>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
